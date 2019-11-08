@@ -1,5 +1,7 @@
 package application;
 
+import java.lang.Math;
+
 /**
  * Berechnet das Formelrad
  * 
