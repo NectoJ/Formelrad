@@ -1,5 +1,7 @@
 package application;
 
+import java.lang.Math;
+
 /**
  * Berechnet das Formelrad
  * 
@@ -71,5 +73,17 @@ public class Calculator {
 
 	public double iAusUundR(double u, double r) {
 		return u / r;
+	}
+
+	public double uAusRundI(double r, double i) {
+		return r * i;
+	}
+
+	public double uAusPundI(double p, double i) {
+		return p / i;
+	}
+
+	public double uAusPundR(double p, double r) {
+		return Math.sqrt(p * r);
 	}
 }
