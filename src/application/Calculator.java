@@ -45,6 +45,25 @@ public class Calculator {
 	}
 
 	public void calculate() {
+
+		int inputs = 0;
+		if(leistung == 0.0) {
+			inputs++;
+		}
+		if(spannung == 0.0) {
+			inputs++;
+		}
+		if(strom == 0.0) {
+			inputs++;
+		}
+		if(widerstand == 0.0) {
+			inputs++;
+		}
+
+		if(inputs != 2) {
+			System.out.println("Es sollten nur 2 Felder ausgefuellt werden!");
+		}
+
 		if (leistung != 0.0 && spannung != 0.0) {
 			strom = leistung / spannung;
 			widerstand = spannung * spannung / leistung;
