@@ -1,7 +1,5 @@
 package application;
 
-import java.lang.Math;
-
 /**
  * Berechnet das Formelrad
  * 
@@ -20,6 +18,8 @@ public class Calculator {
 		this.spannung = spannung;
 		this.strom = strom;
 		this.widerstand = widerstand;
+		
+		calculate();
 	}
 
 	public double getLeistung() {
@@ -45,10 +45,25 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		/*
-		 * Hier auf Grund der vorhanden Werte entscheiden welche Methode unten
-		 * aufgerufen werden muss.
-		 */
+		if (leistung != 0.0 && spannung != 0.0) {
+			strom = leistung / spannung;
+			widerstand = spannung * spannung / leistung;
+		} else if (leistung != 0.0 && strom != 0.0) {
+			spannung = leistung / strom;
+			widerstand = leistung / (strom * strom);
+		} else if (leistung != 0.0 && widerstand != 0.0) {
+			spannung = Math.sqrt(leistung * widerstand);
+			strom = Math.sqrt(leistung / widerstand);
+		} else if (spannung != 0.0 && widerstand != 0.0) {
+			leistung = spannung * spannung / widerstand;
+			strom = spannung / widerstand;
+		} else if (spannung != 0.0 && strom != 0.0) {
+			leistung = spannung * strom;
+			widerstand = spannung / strom;
+		} else if (widerstand != 0.0 && strom != 0.0) {
+			leistung = widerstand * strom * strom;
+			spannung = strom * widerstand;
+		}
 	}
 
 	public double pAusUundI(double u, double i) {
