@@ -60,6 +60,10 @@ public class Calculator {
 			inputs++;
 		}
 
+		if(inputs != 2) {
+			System.out.println("Es sollten nur 2 Felder ausgefüllt werden!");
+		}
+
 		if (leistung != 0.0 && spannung != 0.0) {
 			strom = leistung / spannung;
 			widerstand = spannung * spannung / leistung;
