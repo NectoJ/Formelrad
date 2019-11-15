@@ -45,6 +45,21 @@ public class Calculator {
 	}
 
 	public void calculate() {
+
+		int inputs = 0;
+		if(leistung.isEmpty()) {
+			inputs++;
+		}
+		if(spannung.isEmpty()) {
+			inputs++;
+		}
+		if(strom.isEmpty()) {
+			inputs++;
+		}
+		if(widerstand.isEmpty()) {
+			inputs++;
+		}
+
 		if (leistung != 0.0 && spannung != 0.0) {
 			strom = leistung / spannung;
 			widerstand = spannung * spannung / leistung;
