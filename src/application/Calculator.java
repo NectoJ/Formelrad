@@ -5,8 +5,8 @@ import javafx.scene.control.Alert;
 /**
  * Berechnet das Formelrad
  * 
- * @author Peter Rutschmann
- * @version 13.09.2018
+ * @author Raphael Suter und Jamie Lam
+ * @version 01.11.2019
  */
 public class Calculator {
 	private double leistung;
