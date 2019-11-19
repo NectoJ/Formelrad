@@ -1,10 +1,12 @@
 package application;
 
+import javafx.scene.control.Alert;
+
 /**
  * Berechnet das Formelrad
  * 
- * @author Peter Rutschmann
- * @version 13.09.2018
+ * @author Raphael Suter und Jamie Lam
+ * @version 01.11.2019
  */
 public class Calculator {
 	private double leistung;
@@ -62,6 +64,12 @@ public class Calculator {
 
 		if (inputs != 2) {
 			System.out.println("Es sollten nur 2 Felder ausgefuellt werden!");
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setTitle("Error");
+			alert.setHeaderText(null);
+			alert.setContentText("Es sollten nur 2 Felder ausgefuellt werden!");
+
+			alert.showAndWait();
 		}
 
 		if (leistung != 0.0 && spannung != 0.0) {
